@@ -1,6 +1,6 @@
 const { Cache } = require("./cache.js")
 const LightWallet = require("./lightWallet.js")
-const MyEtherWallet = require("./MyEtherWallet.js")
+const MyEtherWallet = require("./myEtherWallet.js")
 const { Logger } = require("./logger.js")
 
 class Config {
