@@ -1,3 +1,5 @@
+let pApi, provider, api;
+
 /**
  * Uses the Parity specific RPC request `parity_pendingTransactions` to search
  * for pending transactions in the transaction pool.
@@ -6,13 +8,17 @@
  */
 const hasPendingParity = async (conf, txRequest) => {
   // / Only available if using parity locally.
-  const pApi = require("@parity/api")
-  const provider = new pApi.Provider.Http(`${conf.provider}`)
-  const api = new pApi(provider)
 
+  if (!pApi) {
+    pApi = require("@parity/api")
+    provider = new pApi.Provider.Http(`${conf.provider}`)
+    api = new pApi(provider)  
+  }
+  
   const transactions = await api.parity.pendingTransactions()
   const recips = transactions.map(tx => tx.to)
   if (recips.indexOf(txRequest.address) !== -1) return true
+
   return false
 }
 
