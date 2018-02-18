@@ -29,7 +29,7 @@ const scan = async (conf, left, right) => {
     throw new Error(`Received invalid response from Request Tracker | Response: ${nextRequestAddress}`)
   }
 
-  while (nextRequestAddress !== eac.Constants.NULL_ADDRESS) {
+  while (nextRequestAddress !== eac.Constants.NULL_ADDRESS && conf.scanning) {
     log.debug(`Found request - ${nextRequestAddress}`)
 
     // Verify that the request is known to the factory we are validating with.

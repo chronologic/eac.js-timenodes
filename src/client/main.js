@@ -1,3 +1,4 @@
+const AlarmClient = require("./alarmClient")
 const Config = require("./config")
 const Repl = require("./repl")
 const Scanner = require("./scanning")
@@ -126,6 +127,8 @@ const main = async (
     // Waits a bit before starting the repl so that the accounts have time to print.
     setTimeout(() => Repl.start(conf, ms), 1200)
   }
+
+  return new AlarmClient({ config: conf });
 }
 
 module.exports = main
