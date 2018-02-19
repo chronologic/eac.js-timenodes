@@ -5,9 +5,9 @@ const loki = require("lokijs")
 class StatsDB {
   constructor(web3, browserDB) {
     if (browserDB) {
-      this.db = new loki("stats.db")    
+      this.db = browserDB
     } else {
-      this.db = new loki("stats.json")          
+      this.db = new loki("stats.json")
     }
 
     this.stats = this.db.addCollection("stats")
