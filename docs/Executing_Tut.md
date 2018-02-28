@@ -46,7 +46,7 @@ $ parity --geth --chain ropsten --unlock <YOUR ACCOUNT> --password <PASSWORD FIL
 
 Parity should continue syncing with your account unlocked. Your next
 steps should be finding a source for some Ropsten Ether, try the [Metamask
-faucet](faucet.metamask.io) or ask in the Ethereum Alarm Clock Gitter room.
+faucet](https://faucet.metamask.io) or ask in the Ethereum Alarm Clock Gitter room.
 
 ## Running the client
 
